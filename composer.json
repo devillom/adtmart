@@ -6,11 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",  
-        "bican/roles": "2.1.*",
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "5.2.*",
         "laravel/socialite": "^2.0",
         "socialiteproviders/vkontakte": "^1.1",
-        "barryvdh/laravel-debugbar": "^2.1"
+        "barryvdh/laravel-debugbar": "^2.1",
+        "caffeinated/shinobi": "^2.3",
+        "socialiteproviders/yandex": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

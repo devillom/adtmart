@@ -17,7 +17,8 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\EventListener',
         ],
         'SocialiteProviders\Manager\SocialiteWasCalled' => [
-            'SocialiteProviders\VKontakte\VKontakteExtendSocialite'
+            'SocialiteProviders\VKontakte\VKontakteExtendSocialite',
+            'SocialiteProviders\Yandex\YandexExtendSocialite'
         ],
 
     ];
