@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Redirect;
 use Validator;
+use Exception;
 
 class AuthManagerController extends Controller
 {
@@ -71,9 +72,11 @@ class AuthManagerController extends Controller
 
     /**
      * Регистрируем и авторизуем пользователя
+     *
      * @param $oauthData
      * @param $provider
      * @param null $email
+     * @return Redirect
      */
     public function createAndLogin($oauthData, $provider, $email = null)
     {
@@ -94,15 +97,16 @@ class AuthManagerController extends Controller
         if(Auth::check()){
             //@TODO показываем уведомление об успешной авторизации
             return redirect($this->redirectTo);
-        }else{
-            //@TODO уведомление об ошибке типа что то не так!
-            return redirect('/');
         }
+
+        //@TODO уведомление об ошибке типа что то не так!
+        return redirect('/');
 
     }
 
     /**
      * Добавляем Email если отсутствует
+     *
      * @param Request $request
      * @return Redirect|void
      */
